@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://dungeon_tileset/Tile-set - Toen's Medieval Strategy (16x16) - v.1.0.png" type="Texture" id=1]
+
+[sub_resource type="NavigationPolygon" id=1]
+
+vertices = Vector2Array( 16, 0, 16, 16, 0, 16, 0, 0 )
+polygons = [ IntArray( 0, 1, 2, 3 ) ]
+outlines = [ Vector2Array( 16, 0, 16, 16, 0, 16, 0, 0 ) ]
+
+[node name="Node2d" type="Node2D"]
+
+[node name="Ground" type="Sprite" parent="."]
+
+transform/pos = Vector2( 40, 30 )
+transform/scale = Vector2( 1.25, 1.25 )
+texture = ExtResource( 1 )
+centered = false
+region = true
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Ground"]
+
+navpoly = SubResource( 1 )
+enabled = true
+
+[node name="Mountain" type="Sprite" parent="."]
+
+transform/pos = Vector2( 40, 0 )
+transform/scale = Vector2( 1.25, 1.25 )
+texture = ExtResource( 1 )
+centered = false
+region = true
+region_rect = Rect2( 80, 16, 16, 16 )
+
+[node name="GroundWithObstacle" type="Sprite" parent="."]
+
+transform/pos = Vector2( 86, 30 )
+transform/scale = Vector2( 1.25, 1.25 )
+texture = ExtResource( 1 )
+centered = false
+region = true
+region_rect = Rect2( 32, 0, 16, 16 )
+
+

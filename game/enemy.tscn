@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://topdown_shooter/characters/3.png" type="Texture" id=1]
+[ext_resource path="res://enemy.gd" type="Script" id=2]
+
+[node name="enemy" type="Sprite"]
+
+transform/pos = Vector2( -5, -5.23809 )
+transform/scale = Vector2( 0.555556, 0.476191 )
+texture = ExtResource( 1 )
+script/script = ExtResource( 2 )
+
+

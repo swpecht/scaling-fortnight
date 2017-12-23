@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://dungeon_tileset/Tile-set - Toen's Medieval Strategy (16x16) - v.1.0.png" type="Texture" id=1]
+[ext_resource path="res://cannon.gd" type="Script" id=2]
+
+[node name="cannon" type="Sprite"]
+
+transform/scale = Vector2( 1.25, 1.25 )
+texture = ExtResource( 1 )
+centered = false
+region = true
+region_rect = Rect2( 32, 48, 16, 16 )
+script/script = ExtResource( 2 )
+
+[node name="particles_fire" type="Particles2D" parent="."]
+
+transform/pos = Vector2( 8, 0 )
+transform/scale = Vector2( 0.625, 0.5 )
+config/amount = 32
+config/lifetime = 0.380096
+config/emit_timeout = 0.2
+config/emitting = false
+config/process_mode = 1
+config/explosiveness = 0.04
+params/direction = 98.18
+params/spread = 26.19
+params/linear_velocity = 20.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 9.8
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 1.0
+params/final_size = 1.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+color/color = Color( 0.882813, 0.106903, 0.125088, 1 )
+
+

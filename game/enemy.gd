@@ -17,8 +17,8 @@ func _ready():
 	add_to_group('enemies', true)
 	set_process(true)
 
-func inflict_damange(dmg_amount):
-	# do this with health scene so can add it to others?
+func inflict_damage(dmg_amount):
+	
 	pass
 	
 func _process(delta):

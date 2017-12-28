@@ -8,6 +8,8 @@ onready var target_pos = get_node('/root/game/base').get_global_pos()
 var path = []
 onready var nav = get_node('/root/game/nav')
 
+const scn_death_animation = preload('res://enemy_death.tscn')
+
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -18,7 +20,12 @@ func _ready():
 	set_process(true)
 
 func inflict_damage(dmg_amount):
+	var death_anim = scn_death_animation.instance()
+	death_anim.set_pos(get_pos())
+	var game_node = get_node('/root/game')
+	game_node.add_child(death_anim)
 	
+	queue_free()
 	pass
 	
 func _process(delta):

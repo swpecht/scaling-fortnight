@@ -10,31 +10,4 @@ transform/scale = Vector2( 0.555556, 0.476191 )
 texture = ExtResource( 1 )
 script/script = ExtResource( 2 )
 
-[node name="death_animation" type="Particles2D" parent="."]
-
-transform/pos = Vector2( -2.86102e-06, 6 )
-transform/scale = Vector2( 1.40625, 1.15625 )
-config/amount = 32
-config/lifetime = 0.8
-config/emit_timeout = 0.2
-config/emitting = false
-config/process_mode = 1
-config/explosiveness = 0.4
-params/direction = 180.0
-params/spread = 19.64
-params/linear_velocity = 15.0
-params/spin_velocity = 0.0
-params/orbit_velocity = 0.0
-params/gravity_direction = 0.0
-params/gravity_strength = 9.8
-params/radial_accel = 0.0
-params/tangential_accel = 0.0
-params/damping = 0.0
-params/initial_angle = 0.0
-params/initial_size = 1.0
-params/final_size = 1.0
-params/hue_variation = 0.0
-params/anim_speed_scale = 1.0
-params/anim_initial_pos = 0.0
-
 

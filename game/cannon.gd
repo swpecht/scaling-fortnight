@@ -36,7 +36,6 @@ func _process(delta):
 func fire(enemy):
 	is_reloading = true
 	get_node('particles_fire').set_emitting(true)
-	enemy.queue_free()
 	enemy.inflict_damage(DAMAGE)
 
 func reload():

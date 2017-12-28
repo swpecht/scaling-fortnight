@@ -16,7 +16,7 @@ func _ready():
 	set_process(true)
 	
 	var game_node = get_node('/root/game')
-	connect('destructable_death', game_node, 'on_destructable_death')
+	
 
 func _process(delta):
 	if is_reloading:
@@ -44,4 +44,3 @@ func reload():
 func die():
 	emit_signal('destructable_death', get_global_pos())
 	queue_free()
-

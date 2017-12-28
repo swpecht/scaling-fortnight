@@ -30,6 +30,7 @@ func spawn_cannon(tile):
 	var cannon_node = cannon.instance()
 	var cannon_pos = map.map_to_world(Vector2(tile.x, tile.y))
 	cannon_node.set_global_pos(cannon_pos)
+	cannon_node.connect('destructable_death', self, 'on_destructable_death')
 	add_child(cannon_node)
 	
 func on_destructable_death(pos):

@@ -11,6 +11,7 @@ onready var attack = get_node("./attack")
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
+	add_to_group('towers')
 	set_process(true)
 	
 

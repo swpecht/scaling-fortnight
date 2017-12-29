@@ -21,6 +21,16 @@ func _ready():
 	
 func _process(delta):
 	
+	# use get_overlapping_areas() to determine if should attack or move
+	
+	if area.is_in_group('towers'):
+		pass
+	else:
+		return
+	
+	move()
+	
+func move(delta):
 	if path.size() == 0: return # no where to go
 	
 	var cur_pos = get_global_pos()

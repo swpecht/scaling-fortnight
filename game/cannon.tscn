@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://cannon.gd" type="Script" id=1]
 [ext_resource path="res://topdown_shooter/guns/cannon/cannon_side.png" type="Texture" id=2]
 [ext_resource path="res://components/attack.tscn" type="PackedScene" id=3]
+[ext_resource path="res://components/health.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -68,5 +69,9 @@ color/color = Color( 0.882813, 0.106903, 0.125088, 1 )
 [node name="attack" parent="." instance=ExtResource( 3 )]
 
 DAMAGE = 5
+
+[node name="health" parent="." instance=ExtResource( 4 )]
+
+health = 50
 
 

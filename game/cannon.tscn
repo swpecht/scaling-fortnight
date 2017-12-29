@@ -67,4 +67,6 @@ color/color = Color( 0.882813, 0.106903, 0.125088, 1 )
 
 [node name="attack" parent="." instance=ExtResource( 3 )]
 
+DAMAGE = 5
+
 

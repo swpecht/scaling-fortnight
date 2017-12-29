@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://cannon.gd" type="Script" id=1]
 [ext_resource path="res://topdown_shooter/guns/cannon/cannon_side.png" type="Texture" id=2]
+[ext_resource path="res://components/attack.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -21,8 +22,6 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 script/script = ExtResource( 1 )
-RELOAD_TIME = 0.5
-DAMAGE = 10
 
 [node name="sprite" type="Sprite" parent="."]
 
@@ -65,5 +64,7 @@ params/hue_variation = 0.0
 params/anim_speed_scale = 1.0
 params/anim_initial_pos = 0.0
 color/color = Color( 0.882813, 0.106903, 0.125088, 1 )
+
+[node name="attack" parent="." instance=ExtResource( 3 )]
 
 

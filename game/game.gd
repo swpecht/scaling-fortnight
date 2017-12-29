@@ -30,6 +30,7 @@ func spawn_cannon(tile):
 
 func _on_attack(attacker, target):
 	var target_health = target.find_node('health')
+	if target_health == null: return # no action required
 	target_health.health -= attacker.DAMAGE
 	pass
 

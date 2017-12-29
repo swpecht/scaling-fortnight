@@ -8,11 +8,6 @@ onready var map = get_node('nav/map')
 # Tutorial: https://www.youtube.com/watch?v=KU1PslMiZ98
 func _ready():
 	set_process_input(true)
-	
-	var base = preload("res://base.tscn")
-	var base_node = base.instance()
-	base_node.set_global_pos(get_node('BasePosition').get_global_pos())
-	add_child(base_node)
 		
 	var enemy_spawn = preload('res://enemy_spawn.tscn') # will load when parsing the script
 	var enemy_spawn_node = enemy_spawn.instance()

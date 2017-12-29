@@ -9,5 +9,6 @@ transform/pos = Vector2( -5, -5.23809 )
 transform/scale = Vector2( 0.555556, 0.476191 )
 texture = ExtResource( 1 )
 script/script = ExtResource( 2 )
+health = 40
 
 

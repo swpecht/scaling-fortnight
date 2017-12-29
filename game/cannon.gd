@@ -6,9 +6,9 @@ extends Sprite
 signal destructable_death
 
 var is_reloading = false
-var RELOAD_TIME = 1
+var RELOAD_TIME = 0.1
 var RANGE = 50
-var DAMAGE = 10
+export var DAMAGE = 10
 var cur_reload_time = RELOAD_TIME
 
 func _ready():
@@ -36,7 +36,7 @@ func _process(delta):
 func fire(enemy):
 	is_reloading = true
 	get_node('particles_fire').set_emitting(true)
-	enemy.inflict_damage(DAMAGE)
+	enemy.health -= DAMAGE
 
 func reload():
 	is_reloading = false

@@ -6,17 +6,17 @@
 
 transform/pos = Vector2( -5, -5 )
 transform/scale = Vector2( 0.46875, 0.46875 )
-config/amount = 32
+config/amount = 49
 config/lifetime = 0.8
 config/process_mode = 1
 config/explosiveness = 0.4
 params/direction = 180.0
 params/spread = 19.64
-params/linear_velocity = 15.0
+params/linear_velocity = 55.86
 params/spin_velocity = 0.0
 params/orbit_velocity = 0.0
 params/gravity_direction = 0.0
-params/gravity_strength = 9.8
+params/gravity_strength = 18.62
 params/radial_accel = 0.0
 params/tangential_accel = 0.0
 params/damping = 0.0
@@ -32,7 +32,7 @@ script/script = ExtResource( 1 )
 [node name="Timer" type="Timer" parent="."]
 
 process_mode = 1
-wait_time = 1.0
+wait_time = 0.75
 one_shot = false
 autostart = true
 

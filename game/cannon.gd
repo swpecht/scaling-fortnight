@@ -1,4 +1,4 @@
-extends Sprite
+extends Area2D
 
 # class member variables go here, for example:
 # var a = 2
@@ -6,7 +6,7 @@ extends Sprite
 signal destructable_death
 
 var is_reloading = false
-var RELOAD_TIME = 0.1
+export var RELOAD_TIME = 0.5
 var RANGE = 50
 export var DAMAGE = 10
 var cur_reload_time = RELOAD_TIME
@@ -35,7 +35,7 @@ func _process(delta):
 
 func fire(enemy):
 	is_reloading = true
-	get_node('particles_fire').set_emitting(true)
+	get_node('attack_anim').set_emitting(true)
 	enemy.health -= DAMAGE
 
 func reload():

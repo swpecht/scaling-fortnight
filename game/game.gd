@@ -20,7 +20,6 @@ func _input(event):
 		spawn_cannon(tile)
 		
 func spawn_cannon(tile):
-	map.set_cell(tile.x, tile.y, 2)
 	var cannon = preload('res://cannon.tscn')
 	var cannon_node = cannon.instance()
 	var cannon_pos = map.map_to_world(Vector2(tile.x, tile.y))
@@ -30,5 +29,4 @@ func spawn_cannon(tile):
 	
 func on_destructable_death(pos):
 	# replace with ground tile
-	var tile = map.world_to_map(pos)
-	map.set_cell(tile.x, tile.y, 0)
+	pass

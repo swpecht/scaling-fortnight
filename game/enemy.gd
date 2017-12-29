@@ -1,14 +1,12 @@
 extends Area2D
 
 
-export var health = 10 setget set_health
-
 var SPEED = 100
 onready var target_pos = get_node('/root/game/base').get_global_pos()
 var path = []
 onready var nav = get_node('/root/game/nav')
 
-const scn_death_animation = preload('res://enemy_death.tscn')
+
 
 
 func _ready():
@@ -19,14 +17,7 @@ func _ready():
 	add_to_group('enemies', true)
 	set_process(true)
 
-func set_health(new_health):
-	health = new_health
-	if health <= 0:
-		var death_anim = scn_death_animation.instance()
-		death_anim.set_pos(get_pos())
-		var game_node = get_node('/root/game')
-		game_node.add_child(death_anim)
-		queue_free()
+
 	
 func _process(delta):
 	

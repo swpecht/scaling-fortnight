@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://enemy.gd" type="Script" id=1]
 [ext_resource path="res://topdown_shooter/characters/3.png" type="Texture" id=2]
+[ext_resource path="res://components/health.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -21,7 +22,6 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 script/script = ExtResource( 1 )
-health = 40
 
 [node name="sprite" type="Sprite" parent="."]
 
@@ -36,5 +36,7 @@ transform/scale = Vector2( 2.46154, 2.46154 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
+
+[node name="health" parent="." instance=ExtResource( 3 )]
 
 

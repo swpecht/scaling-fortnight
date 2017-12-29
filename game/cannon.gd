@@ -4,6 +4,7 @@ extends Area2D
 # var a = 2
 # var b = "textvar"
 signal destructable_death
+signal attack
 
 var is_reloading = false
 export var RELOAD_TIME = 0.5
@@ -17,6 +18,7 @@ func _ready():
 	set_process(true)
 	
 	var game_node = get_node('/root/game')
+	self.connect("attack", game_node, "_on_attack") 
 	
 
 func _process(delta):
@@ -36,6 +38,7 @@ func _process(delta):
 func fire(enemy):
 	is_reloading = true
 	get_node('attack_anim').set_emitting(true)
+	emit_signal("attack", self, enemy)
 	enemy.health -= DAMAGE
 
 func reload():

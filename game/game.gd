@@ -7,6 +7,7 @@ onready var map = get_node('nav/map')
 
 # Tutorial: https://www.youtube.com/watch?v=KU1PslMiZ98
 func _ready():
+	
 	set_process_input(true)
 		
 	var enemy_spawn = preload('res://enemy_spawn.tscn') # will load when parsing the script
@@ -26,7 +27,12 @@ func spawn_cannon(tile):
 	cannon_node.set_global_pos(cannon_pos)
 	cannon_node.connect('destructable_death', self, 'on_destructable_death')
 	add_child(cannon_node)
-	
+
+func _on_attack(attacker, target):
+	var target_health = target.find_node('health')
+	target_health.health -= attacker.DAMAGE
+	pass
+
 func on_destructable_death(pos):
 	# replace with ground tile
 	pass

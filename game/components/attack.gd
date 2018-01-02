@@ -26,9 +26,9 @@ func try_attack(target):
 	if is_reloading: return
 	
 	is_reloading = true
-	var attack_anim = get_node('../attack_anim')
-	if attack_anim != null:
-		attack_anim.set_emitting(true)
+	var attack_anim_name =  '../attack_anim'
+	if has_node(attack_anim_name):
+		get_node(attack_anim_name).set_emitting(true)
 	emit_signal("attack", self, target)
 
 func reload():

@@ -42,4 +42,8 @@ _update_shape_index = 0
 
 [node name="attack" parent="." instance=ExtResource( 4 )]
 
+[connection signal="area_enter" from="." to="." method="_on_enemy_area_enter"]
+
+[connection signal="area_exit" from="." to="." method="_on_enemy_area_exit"]
+
 

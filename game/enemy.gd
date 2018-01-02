@@ -15,8 +15,6 @@ enum ACTION {
 	Attacking
 }
 
-
-
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
@@ -28,10 +26,7 @@ func _ready():
 
 	
 func _process(delta):
-	
-	# use get_overlapping_areas() to determine if should attack or move
-	
-	
+
 	if action_state == ACTION.Moving:
 		move(delta)
 	elif action_state == ACTION.Attacking:

@@ -1,45 +1,88 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=9 format=1]
 
-[ext_resource path="res://dungeon_tileset/Tile-set - Toen's Medieval Strategy (16x16) - v.1.0.png" type="Texture" id=1]
+[ext_resource path="res://sprites/tiles/towerDefense_tile024.png" type="Texture" id=1]
+[ext_resource path="res://sprites/tiles/towerDefense_tile126.png" type="Texture" id=2]
+[ext_resource path="res://sprites/tiles/towerDefense_tile105.png" type="Texture" id=3]
+[ext_resource path="res://sprites/tiles/towerDefense_tile034.png" type="Texture" id=4]
+[ext_resource path="res://sprites/tiles/towerDefense_tile081.png" type="Texture" id=5]
 
 [sub_resource type="NavigationPolygon" id=1]
 
-vertices = Vector2Array( 16, 0, 16, 16, 0, 16, 0, 0 )
+vertices = Vector2Array( 20.3636, -20.3636, 20.3636, 20.3636, -20.3636, 20.3636, -20.3636, -20.3636 )
 polygons = [ IntArray( 0, 1, 2, 3 ) ]
-outlines = [ Vector2Array( 16, 0, 16, 16, 0, 16, 0, 0 ) ]
+outlines = [ Vector2Array( 20.3636, -20.3636, 20.3636, 20.3636, -20.3636, 20.3636, -20.3636, -20.3636 ) ]
+
+[sub_resource type="NavigationPolygon" id=2]
+
+vertices = Vector2Array( -24.8889, -22.8571, 24.8889, -22.8571, 24.8889, 22.8571, -24.8889, 22.8571 )
+polygons = [ IntArray( 0, 1, 2, 3 ) ]
+outlines = [ Vector2Array( -24.8889, -22.8571, 24.8889, -22.8571, 24.8889, 22.8571, -24.8889, 22.8571 ) ]
+
+[sub_resource type="NavigationPolygon" id=3]
+
+vertices = Vector2Array( 0, -3.55556, -6.39999, -3.55556, -6.39999, -24.8889, 19.2, -24.8889, 19.2, 3.55555, 0, 3.55555 )
+polygons = [ IntArray( 0, 1, 2, 3 ), IntArray( 0, 3, 4, 5 ) ]
+outlines = [ Vector2Array( -6.39999, -3.55556, -6.39999, -24.8889, 19.2, -24.8889, 19.2, 3.55555, 0, 3.55555, 0, -3.55556 ) ]
 
 [node name="Node2d" type="Node2D"]
 
-[node name="Ground" type="Sprite" parent="."]
+[node name="ground" type="Sprite" parent="."]
 
-transform/pos = Vector2( 40, 30 )
-transform/scale = Vector2( 1.25, 1.25 )
+transform/pos = Vector2( 20, 30 )
+transform/scale = Vector2( 1.09375, 1.09375 )
 texture = ExtResource( 1 )
 centered = false
-region = true
 region_rect = Rect2( 0, 0, 16, 16 )
 
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Ground"]
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="ground"]
 
+transform/pos = Vector2( 32, 32 )
+transform/scale = Vector2( 1.57143, 1.57143 )
 navpoly = SubResource( 1 )
 enabled = true
 
-[node name="Mountain" type="Sprite" parent="."]
+[node name="groud_to_mountain" type="Sprite" parent="."]
 
-transform/pos = Vector2( 40, 0 )
-transform/scale = Vector2( 1.25, 1.25 )
-texture = ExtResource( 1 )
+transform/pos = Vector2( 160, 30 )
+transform/scale = Vector2( 1.09375, 1.09375 )
+texture = ExtResource( 2 )
 centered = false
-region = true
-region_rect = Rect2( 80, 16, 16, 16 )
+region_rect = Rect2( 0, 0, 16, 16 )
 
-[node name="GroundWithObstacle" type="Sprite" parent="."]
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="groud_to_mountain"]
 
-transform/pos = Vector2( 86, 30 )
-transform/scale = Vector2( 1.25, 1.25 )
-texture = ExtResource( 1 )
+transform/pos = Vector2( 32, 41.1429 )
+transform/scale = Vector2( 1.28571, 1 )
+navpoly = SubResource( 2 )
+enabled = true
+
+[node name="groud_to_mountain_corner" type="Sprite" parent="."]
+
+transform/pos = Vector2( 270, 30 )
+transform/scale = Vector2( 1.09375, 1.09375 )
+texture = ExtResource( 3 )
 centered = false
-region = true
-region_rect = Rect2( 32, 0, 16, 16 )
+region_rect = Rect2( 0, 0, 16, 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="groud_to_mountain_corner"]
+
+transform/pos = Vector2( 36.5714, 32 )
+transform/scale = Vector2( 1.42857, 1.28571 )
+navpoly = SubResource( 3 )
+enabled = true
+
+[node name="mountain" type="Sprite" parent="."]
+
+transform/pos = Vector2( 50, 150 )
+transform/scale = Vector2( 1.02344, 1.09375 )
+texture = ExtResource( 4 )
+
+[node name="mountain_to_ground_corner" type="Sprite" parent="."]
+
+transform/pos = Vector2( 190, 150 )
+texture = ExtResource( 5 )
 
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://enemy.gd" type="Script" id=1]
 [ext_resource path="res://sprites/enemies/towerDefense_tile246.png" type="Texture" id=2]
 [ext_resource path="res://components/health.tscn" type="PackedScene" id=3]
 [ext_resource path="res://components/attack.tscn" type="PackedScene" id=4]
-[ext_resource path="res://components/velocity.tscn" type="PackedScene" id=5]
+[ext_resource path="res://components/destination.tscn" type="PackedScene" id=5]
+[ext_resource path="res://components/velocity.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -43,7 +44,12 @@ _update_shape_index = 0
 
 [node name="attack" parent="." instance=ExtResource( 4 )]
 
-[node name="velocity" parent="." instance=ExtResource( 5 )]
+[node name="destination" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 0.643732, -0.735582 )
+transform/scale = Vector2( 2.04471, 1.70366 )
+
+[node name="velocity" parent="." instance=ExtResource( 6 )]
 
 velocity = Vector2( -20, 0 )
 

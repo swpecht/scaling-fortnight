@@ -16,4 +16,11 @@ func process(delta, entity):
 	entity.set_pos(entity.get_pos() + velocity.velocity * delta)
 	pass
 
-	
+
+func other():
+	#
+	# var distance_to_next_path = cur_pos.distance_to(path[0])
+	# if distance_to_next_path < 2:
+	# 	set_global_pos(path[0])
+	# 	path.remove(0)
+	pass

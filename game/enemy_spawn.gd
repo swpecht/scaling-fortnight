@@ -13,7 +13,7 @@ func _ready():
 
 func spawn_enemy():
 	var enemy_node = enemy_scene.instance()
-	var game_node = get_node('/root/game')
+	var game_node = get_node('/root/game/entities')
 	
 	var spawn_pos = get_global_pos()
 	spawn_pos += Vector2(rand_range(-50, 50), rand_range(-50, 50))

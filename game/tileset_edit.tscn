@@ -8,9 +8,9 @@
 
 [sub_resource type="NavigationPolygon" id=1]
 
-vertices = Vector2Array( 20.3636, -20.3636, 20.3636, 20.3636, -20.3636, 20.3636, -20.3636, -20.3636 )
+vertices = Vector2Array( 32, -32, 32, 32, -32, 32, -32, -32 )
 polygons = [ IntArray( 0, 1, 2, 3 ) ]
-outlines = [ Vector2Array( 20.3636, -20.3636, 20.3636, 20.3636, -20.3636, 20.3636, -20.3636, -20.3636 ) ]
+outlines = [ Vector2Array( 32, -32, 32, 32, -32, 32, -32, -32 ) ]
 
 [sub_resource type="NavigationPolygon" id=2]
 
@@ -37,7 +37,6 @@ region_rect = Rect2( 0, 0, 16, 16 )
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="ground"]
 
 transform/pos = Vector2( 32, 32 )
-transform/scale = Vector2( 1.57143, 1.57143 )
 navpoly = SubResource( 1 )
 enabled = true
 

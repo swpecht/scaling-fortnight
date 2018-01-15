@@ -6,18 +6,33 @@ extends Node2D
 onready var map = get_node('nav/map')
 onready var astar = AStar.new()
 var grid
+var last_click = Vector2(0,0)
+
+var systems = []
 
 # Tutorial: https://www.youtube.com/watch?v=KU1PslMiZ98
 func _ready():
 	
-	set_process_input(true)
+	# setup systems
+	systems.append(load('res://systems/movement.tscn').instance())
 	
-	make_nav_grid(astar, map)
+	set_process_input(true)
+	set_process(true)
+	
+	grid = make_nav_grid(astar, map)
 		
 	var enemy_spawn = preload('res://enemy_spawn.tscn') # will load when parsing the script
 	var enemy_spawn_node = enemy_spawn.instance()
 	enemy_spawn_node.set_global_pos(get_node('SpawnPosition').get_global_pos())
 	add_child(enemy_spawn_node)
+	
+
+func _process(delta):
+	
+	# Run all systems
+	for s in systems:
+		for e in get_node('entities').get_children():
+			s.process(delta, e)
 
 func make_nav_grid(astar, map):
 	var map_size = calculate_tilemap_size(map)
@@ -37,12 +52,11 @@ func make_nav_grid(astar, map):
 			var center_id = grid[Vector2(r, w)]
 			for w_offset in [-1, 1]:
 				for r_offset in [-1, 1]:
-					var key = Vector2(w+w_offset, r+r_offset)
+					var key = Vector2(r+r_offset, w+w_offset)
 					if grid.has(key):
-						astar.connect_points(center_id, grid[key])
-			
-	
-	pass
+						var with_id = grid[key]
+						astar.connect_points(center_id, with_id)
+	return grid
 	
 func calculate_tilemap_size(tilemap):
     # Get list of all positions where there is a tile
@@ -83,6 +97,8 @@ func calculate_tilemap_size(tilemap):
 
 
 func _input(event):
+	last_click = event.pos
+	update()
 	if event.type == InputEvent.MOUSE_BUTTON and event.pressed:
 		var tile = map.world_to_map(event.pos)
 		spawn_cannon(tile)
@@ -104,3 +120,5 @@ func _on_attack(attacker, target):
 func on_destructable_death(pos):
 	# replace with ground tile
 	pass
+	
+	

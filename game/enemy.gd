@@ -2,7 +2,7 @@ extends Area2D
 
 
 var SPEED = 100
-onready var target_pos = get_node('/root/game/base').get_global_pos()
+onready var target_pos = get_node('/root/game/entities/base').get_global_pos()
 var path = []
 onready var nav = get_node('/root/game/nav')
 var action_state = ACTION.Moving
@@ -19,7 +19,6 @@ func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	var cur_pos = get_global_pos()
-	path = nav.get_simple_path(cur_pos, target_pos)
 	add_to_group('enemies', true)
 	set_process(true)
 

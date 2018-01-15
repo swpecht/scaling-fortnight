@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://enemy.gd" type="Script" id=1]
 [ext_resource path="res://sprites/enemies/towerDefense_tile246.png" type="Texture" id=2]
 [ext_resource path="res://components/health.tscn" type="PackedScene" id=3]
 [ext_resource path="res://components/attack.tscn" type="PackedScene" id=4]
+[ext_resource path="res://components/velocity.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -41,6 +42,10 @@ _update_shape_index = 0
 [node name="health" parent="." instance=ExtResource( 3 )]
 
 [node name="attack" parent="." instance=ExtResource( 4 )]
+
+[node name="velocity" parent="." instance=ExtResource( 5 )]
+
+velocity = Vector2( -20, 0 )
 
 [connection signal="area_enter" from="." to="." method="_on_enemy_area_enter"]
 

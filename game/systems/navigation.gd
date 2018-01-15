@@ -48,8 +48,8 @@ func make_nav_grid(astar, map):
 	for w in range(map_size['width']):
 		for r in range(map_size['height']):
 			var center_id = grid[Vector2(r, w)]
-			for w_offset in [-1, 1]:
-				for r_offset in [-1, 1]:
+			for w_offset in [-1, 0, 1]:
+				for r_offset in [-1, 0, 1]:
 					var key = Vector2(r+r_offset, w+w_offset)
 					if grid.has(key):
 						var with_id = grid[key]

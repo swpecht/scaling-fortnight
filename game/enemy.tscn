@@ -52,6 +52,7 @@ transform/scale = Vector2( 2.04471, 1.70366 )
 [node name="velocity" parent="." instance=ExtResource( 6 )]
 
 velocity = Vector2( -20, 0 )
+max_speed = 100
 
 [connection signal="area_enter" from="." to="." method="_on_enemy_area_enter"]
 

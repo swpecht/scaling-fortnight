@@ -27,7 +27,7 @@ func process(delta, entity):
 	
 	if path.size() > 1:
 		var next_point = path[0]
-		if cur_pos.distance_to(next_point) < 20: next_point = path[1]		
+		if cur_pos.distance_to(next_point) < velocity.max_speed: next_point = path[1]
 		velocity.velocity =  next_point - cur_pos 
 	pass
 	
@@ -53,7 +53,9 @@ func make_nav_grid(astar, map):
 					var key = Vector2(r+r_offset, w+w_offset)
 					if grid.has(key):
 						var with_id = grid[key]
-						astar.connect_points(center_id, with_id)
+						if ((not astar.are_points_connected(center_id, with_id)) and
+							with_id != center_id):
+							 astar.connect_points(center_id, with_id)
 	return grid
 	
 func calculate_tilemap_size(tilemap):
